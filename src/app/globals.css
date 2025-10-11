@@ -1,26 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-bg: #000000;
+  --color-sec-bg: #121212;
+  --color-writing: #ffffff;
+  --color-gradient: linear-gradient(to right, #4169e1, #50c878);
+  --color-bluish: #4169e1;
+  --color-greenish: #50c878;
+
+  --font-poppins: "Poppins", sans-serif;
+  --font-lobster: "Lobster", sans-serif;
+
+  --breakpoint-xs: 1px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+html {
+  scroll-behavior: smooth;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html::-webkit-scrollbar {
+  width: 0.8rem;
+}
+
+html::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+
+html::-webkit-scrollbar-thumb {
+  background: var(--color-gradient);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-writing);
+}
+
+section {
+  /* min-height: 80vh; */
+  padding: 5rem 9%;
+  scroll-margin-block: 50px;
+}
+
+#logo,
+#menu-icon,
+.name {
+  color: transparent;
+  background-clip: text !important;
+  background: var(--color-gradient);
 }

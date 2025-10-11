@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://usamawebdeveloper.netlify.app
+
+# Sitemaps
+Sitemap: https://usamawebdeveloper.netlify.app/sitemap.xml
