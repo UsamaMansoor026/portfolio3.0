@@ -1,35 +1,49 @@
 import { skills } from "@/data";
-import SectionHeading from "./SectionHeading";
-import Image from "next/image";
+import { ChevronDown, CodeXml } from "lucide-react";
+
+const mobileSkills = [
+  { name: "Android Development", detail: "Build mobile interfaces for Android." },
+  { name: "Kotlin", detail: "Write application code for Android and shared mobile modules." },
+  { name: "Jetpack Compose", detail: "Build Android screens with declarative, reusable UI." },
+  { name: "Kotlin Multiplatform", detail: "Share code across Android and iOS." },
+];
 
 const Skills = () => {
   return (
-    <section id="skills" className="relative">
-      <SectionHeading heading="Skills" />
-
-      <div className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-[300px] h-[300px] bg-bluish blur-3xl shadow-2xl shadow-bluish rounded-full z-[-1] opacity-50" />
-      <div className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-[200px] h-[200px] bg-greenish blur-3xl shadow-2xl shadow-bluish rounded-full z-[-1] opacity-50" />
-
-      {/* Skills container */}
-      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 flex-wrap gap-7 mt-4">
-        {skills?.length > 0 &&
-          skills.map((skill) => (
-            <article
-              key={skill.id}
-              className="bg-sec-bg px-3 py-5 rounded-2xl mb-3 flex flex-col items-center  gap-4 duration-200 hover:shadow-md hover:shadow-bluish"
-            >
-              <Image
-                src={skill.icon}
-                alt={skill.name}
-                width={70}
-                height={70}
-                className="w-[70px] h-[70px] mx-auto"
-              />
-              <span className="text-lg capitalize text-center block text-bluish">
-                {skill.name}
-              </span>
-            </article>
-          ))}
+    <section id="skills" className="portfolio-section stack-section">
+      <div className="portfolio-shell stack-layout">
+        <div>
+          <p className="portfolio-kicker">02 / Skills</p>
+          <h2 className="portfolio-heading">My <em>toolkit.</em></h2>
+          <p className="stack-intro">Android UI, shared mobile code, and a background in frontend web development.</p>
+          <div className="stack-art" aria-hidden="true">
+            <div /><div /><div /><div><CodeXml size={36} strokeWidth={2.5} /></div>
+          </div>
+        </div>
+        <div className="stack-content">
+          <h3 className="portfolio-kicker">Mobile development</h3>
+          <div className="skill-rows">
+            {mobileSkills.map((skill, index) => (
+              <details key={skill.name} name="mobile-skills" open={index === 0}>
+                <summary>
+                  <span className="skill-index">0{index + 1}</span>
+                  {skill.name}
+                  <ChevronDown className="skill-toggle" size={17} aria-hidden="true" />
+                </summary>
+                <p>{skill.detail}</p>
+              </details>
+            ))}
+          </div>
+          <details className="web-skills">
+            <summary>
+              Frontend development
+              <ChevronDown className="skill-toggle" size={17} aria-hidden="true" />
+            </summary>
+            <ul>
+              {skills.map((skill) => <li key={skill}>{skill}</li>)}
+            </ul>
+          </details>
+        </div>
       </div>
     </section>
   );

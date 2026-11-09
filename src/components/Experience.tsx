@@ -1,44 +1,56 @@
-import SectionHeading from "./SectionHeading";
-
 const Experience = () => {
   return (
-    <section id="experience">
-      <SectionHeading heading="Experience" />
-
-      <div className="space-y-10 mt-8">
-        {/* Experience Freelancing */}
-        <div className="bg-sec-bg px-6 py-10 rounded-lg shadow-lg border border-bluish">
-          <div className="flex flex-col md:flex-row md:justify-between md:items-center">
-            <h3 className="text-xl font-semibold text-bluish">
-              Jr. React Developer | CloudQuik
-            </h3>
-            <span className="text-sm text-gray-400 mt-1 md:mt-0">
-              Feb 2024 – Sep 2025
-            </span>
+    <section id="experience" className="portfolio-section">
+      <div className="portfolio-shell about-layout">
+        <div>
+          <p className="portfolio-kicker">01 / About</p>
+          <h2 className="portfolio-heading">From the web<br />to <em>mobile.</em></h2>
+          <div className="about-copy">
+            <p>
+              I&apos;m Usama Mansoor, an Android developer. Since early 2025,
+              I&apos;ve been developing mobile apps for Android and iOS. I use
+              Kotlin and Jetpack Compose to build Android interfaces, and
+              Kotlin Multiplatform to share code between the two platforms.
+            </p>
+            <p>
+              I came to mobile from frontend web development. From 2023
+              through the end of 2024, I built responsive, accessible
+              interfaces with React, Next.js, TypeScript, JavaScript, and
+              Tailwind CSS. My work also covered state management,
+              authentication, and connecting interfaces to REST and GraphQL APIs.
+            </p>
+            <p>
+              That experience shapes how I build mobile screens today. I think
+              through what people see while data loads, how they recover when
+              something goes wrong, and how an interface adapts to different
+              screens. I bring the same attention to readable layouts and
+              reusable UI that I developed on the web.
+            </p>
           </div>
-          <ul className="list-disc list-inside mt-4 text-gray-300 space-y-2">
+        </div>
+        <div className="experience-track">
+          <h3 className="portfolio-kicker">Experience</h3>
+          <ol>
             <li>
-              Built and maintained responsive web applications using React.js,
-              ensuring smooth performance and clean UI.
+              <p className="experience-date">Early 2025 – Present</p>
+              <h4>Mobile development</h4>
+              <p>
+                Build Android UI in Jetpack Compose and use Kotlin
+                Multiplatform for code shared across Android and iOS.
+              </p>
             </li>
             <li>
-              Worked with state management tools like Redux and Context API to
-              handle complex data flows.
+              <p className="experience-date">Frontend background · 2023–2024</p>
+              <h4>Frontend web development</h4>
+              <p>
+                As a junior React developer at CloudQuik, I built and
+                maintained responsive interfaces, managed application state
+                with Redux and Context API, and integrated REST APIs. I worked
+                with designers and backend developers to turn requirements
+                into usable screens and fix issues across the application.
+              </p>
             </li>
-            <li>
-              Integrated REST APIs and displayed dynamic data across different
-              components.
-            </li>
-            <li>
-              Collaborated with designers and backend developers to match design
-              requirements and improve user experience. Fixed bugs, optimized
-              code, and improved application speed and responsiveness.
-            </li>
-            <li>
-              Gained hands-on experience with tools like Git/GitHub, VS Code,
-              and Figma for development and collaboration.
-            </li>
-          </ul>
+          </ol>
         </div>
       </div>
     </section>

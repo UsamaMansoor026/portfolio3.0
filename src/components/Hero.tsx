@@ -1,37 +1,57 @@
+import { ArrowDown, ArrowUpRight } from "lucide-react";
+
 const Hero = () => {
   return (
-    <section id="home" className="relative overflow-x-hidden">
-      {/* Name */}
-      <span
-        className="xs:text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-lobster font-bold transition-all duration-200 pointer-events-none absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] -z-10 opacity-30 -rotate-45 text-shadow-xs text-shadow-bluish"
-        id="logo"
-      >
-        Usama
-      </span>
+    <section id="home" className="portfolio-hero">
+      <div className="portfolio-shell hero-layout">
+        <div className="hero-copy">
+          <p className="portfolio-kicker">Android Developer</p>
+          <h1>Usama <span>Mansoor</span></h1>
+          <p className="hero-intro">
+            I build Android apps with Kotlin and Jetpack Compose and use Kotlin
+            Multiplatform to share code across Android and iOS.
+          </p>
+          <div className="portfolio-actions">
+            <a className="portfolio-button" href="#contact">
+              <span className="portfolio-button-face">
+                Contact me <ArrowUpRight size={17} aria-hidden="true" />
+              </span>
+            </a>
+            <a className="portfolio-text-link" href="#experience">
+              Get to know me <ArrowDown size={16} aria-hidden="true" />
+            </a>
+          </div>
+          <p className="portfolio-status">
+            <span aria-hidden="true" /> Open to remote Android roles
+          </p>
+        </div>
 
-      {/* Helping Circles */}
-      <div className="absolute -left-36 w-[300px] h-[300px] bg-bluish blur-3xl shadow-2xl shadow-bluish rounded-full z-[-1] opacity-50" />
-      <div className="absolute -right-36 w-[300px] h-[300px] bg-greenish blur-3xl shadow-2xl shadow-bluish rounded-full z-[-1] opacity-50" />
-
-      <h1 className="text-3xl md:text-6xl leading-[1.3] font-bold text-center">
-        Hy I am <span className="name">Usama Mansoor</span>
-      </h1>
-
-      <h3 className="text-xl sm:text-4xl text-center font-bold my-4">
-        And I&apos;m a <span className="name">Frontend Developer</span>
-      </h3>
-
-      <p className="text-justify text-[15px] md:text-[17px] max-w-full md:max-w-[80%] mx-auto mt-6 leading-[2]">
-        Passionate <b>Frontend Developer</b> with almost <b>2 years</b> of
-        experience in building responsive and user-friendly web applications.
-        Skilled in <b>JavaScript</b>, <b>TypeScript</b>, <b>React.js</b>,{" "}
-        <b>Next.Js</b> and state management tools like <b>Redux</b>,{" "}
-        <b>Zustand</b> and <b>Context API</b>. Experienced in integrating APIs,
-        working with modern UI libraries, and ensuring applications are
-        optimized for performance and scalability. I focus on writing clean,
-        reusable code and collaborating with teams to deliver seamless user
-        experiences.
-      </p>
+        <div className="device-stage" aria-hidden="true">
+          <div className="device-orbit" />
+          <div className="device">
+            <div className="device-rail" />
+            <div className="device-screen">
+              <div className="device-camera" />
+              <span className="device-label">MOBILE DEVELOPMENT</span>
+              <div className="device-art">
+                <i /><i /><i />
+              </div>
+              <div className="device-title">Android<br />&amp; iOS</div>
+              <div className="device-platforms">
+                <span>Jetpack Compose</span>
+                <span>Kotlin Multiplatform</span>
+              </div>
+              <div className="device-gesture" />
+              <div className="device-sheen" />
+            </div>
+          </div>
+          <span className="device-tag device-tag-top"><i /> KOTLIN</span>
+          <span className="device-tag device-tag-bottom"><i /> ANDROID + iOS</span>
+        </div>
+      </div>
+      <div className="portfolio-shell hero-index" aria-hidden="true">
+        <span>ANDROID / MOBILE</span><span>KOTLIN • COMPOSE • KMP</span>
+      </div>
     </section>
   );
 };

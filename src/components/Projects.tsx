@@ -1,74 +1,76 @@
 "use client";
 
-import SectionHeading from "./SectionHeading";
-import { projects } from "../data";
-const LazyLoadImage = dynamic(
-  () =>
-    import("react-lazy-load-image-component").then((mod) => mod.LazyLoadImage),
-  { ssr: false }
-);
-import "react-lazy-load-image-component/src/effects/blur.css";
-import dynamic from "next/dynamic";
+import { ArrowUpRight, CodeXml, PanelsTopLeft } from "lucide-react";
+import Image from "next/image";
+import { projects } from "@/data";
 
 const Projects = () => {
   return (
-    <section id="projects">
-      <SectionHeading heading="Latest Projects" />
+    <section id="projects" className="portfolio-section projects-section" aria-labelledby="projects-heading">
+      <div className="portfolio-shell">
+        <p className="portfolio-kicker">03 / Projects</p>
+        <h2 id="projects-heading" className="portfolio-heading">Web <em>projects.</em></h2>
+        <p className="projects-intro">Explore my frontend work through live demos and source code.</p>
 
-      {/* Image Container */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-9">
-        {projects?.length > 0 &&
-          projects.map((project) => {
-            return (
-              <div
-                key={project.id}
-                className="rounded-lg flex flex-col gap-2 bg-writing pb-2 h-[300px] relative"
-              >
-                {/* Code Button */}
-                <div className="absolute top-2 right-2 z-10 bg-bg w-[45px] h-[45px] border border-bluish rounded-full flex items-center justify-center">
-                  <a
-                    href={project.github_link}
-                    target="_blank"
-                    className="text-bluish text-xl"
-                  >
-                    <i className="fa-solid fa-code" />
-                  </a>
+        <div className="project-grid">
+          {projects.map((project) => (
+            <article key={project.id} className="project-card">
+              <div className="project-card-face">
+                <div className="project-preview">
+                  <div className="project-window-bar" aria-hidden="true">
+                    <span /><span /><span />
+                  </div>
+                  <div className="project-viewport">
+                    <div className="project-preview-fallback" aria-hidden="true">
+                      <PanelsTopLeft size={32} strokeWidth={1.5} />
+                      <span>Web project</span>
+                    </div>
+                    <Image
+                      src={project.image}
+                      alt=""
+                      fill
+                      unoptimized
+                      sizes="(min-width: 1000px) 33vw, (min-width: 600px) 50vw, 100vw"
+                      onError={(event) => { event.currentTarget.hidden = true; }}
+                    />
+                  </div>
                 </div>
-
-                {/* Project Image */}
-                <div className="group relative h-[250px] overflow-hidden border-[2px] border-bluish rounded-lg">
-                  <LazyLoadImage
-                    className={`w-full absolute top-0 transition-transform duration-[3000ms] group-hover:-translate-y-[calc(100%-250px)] ${
-                      project.title === "Maan Notes"
-                        ? "h-full object-cover"
-                        : ""
-                    }`}
-                    src={project.image}
-                    alt={project.title}
-                  />
+                <div className="project-card-body">
+                  <h3>{project.title}</h3>
+                  <div className="project-links">
+                    <a
+                      className="project-link"
+                      href={project.live_link}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={`View live demo of ${project.title}`}
+                    >
+                      Live demo <ArrowUpRight size={16} aria-hidden="true" />
+                    </a>
+                    <a
+                      className="project-link project-source"
+                      href={project.github_link}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={`View ${project.title} source code`}
+                    >
+                      <CodeXml size={16} aria-hidden="true" /> Source
+                    </a>
+                  </div>
                 </div>
-
-                <a
-                  href={project.live_link}
-                  target="_blank"
-                  className="name font-semibold text-center text-lg duration-200 border-b-[2px] border-b-transparent hover:border-b-bluish w-fit mx-auto my-2"
-                >
-                  {project.title}
-                </a>
               </div>
-            );
-          })}
-      </div>
+            </article>
+          ))}
+        </div>
 
-      {/* More Projects Button */}
-      <div className="flex items-center justify-center mt-7">
-        <a
-          href="https://github.com/UsamaMansoor026"
-          target="_blank"
-          className="cursor-pointer bg-bluish border border-bluish px-7 py-2 duration-200 hover:bg-transparent hover:text-bluish hover:shadow-md hover:shadow-bluish"
-        >
-          See More
-        </a>
+        <div className="portfolio-actions project-more">
+          <a className="portfolio-button" href="https://github.com/UsamaMansoor026" target="_blank" rel="noreferrer">
+            <span className="portfolio-button-face">
+              <CodeXml size={17} aria-hidden="true" /> More on GitHub
+              <ArrowUpRight size={16} aria-hidden="true" />
+            </span>
+          </a>
+        </div>
       </div>
     </section>
   );

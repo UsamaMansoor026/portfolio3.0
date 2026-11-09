@@ -1,59 +1,19 @@
 export const skills = [
-  {
-    id: 1,
-    name: "html",
-    icon: "./icons/html.svg",
-  },
-  {
-    id: 2,
-    name: "css",
-    icon: "./icons/css3.svg",
-  },
-  {
-    id: 3,
-    name: "javaScript",
-    icon: "./icons/javascript.svg",
-  },
-  {
-    id: 4,
-    name: "typeScript",
-    icon: "./icons/typescript.svg",
-  },
-  {
-    id: 5,
-    name: "tailwind",
-    icon: "./icons/tailwindcss.svg",
-  },
-  {
-    id: 6,
-    name: "bootstrap",
-    icon: "./icons/bootstrap.svg",
-  },
-  {
-    id: 7,
-    name: "react",
-    icon: "./icons/react.svg",
-  },
-  {
-    id: 8,
-    name: "firebase",
-    icon: "./icons/firebase.svg",
-  },
-  {
-    id: 9,
-    name: "gitHub",
-    icon: "./icons/github.svg",
-  },
-  {
-    id: 10,
-    name: "git",
-    icon: "./icons/git.svg",
-  },
-  {
-    id: 11,
-    name: "redux",
-    icon: "./icons/redux.svg",
-  },
+  "React",
+  "Next.js",
+  "TypeScript",
+  "JavaScript",
+  "Tailwind CSS",
+  "HTML",
+  "CSS",
+  "Bootstrap",
+  "Redux",
+  "REST APIs",
+  "GraphQL",
+  "Authentication",
+  "Firebase",
+  "Git",
+  "GitHub",
 ];
 
 export const projects = [
